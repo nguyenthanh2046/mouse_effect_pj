@@ -1,0 +1,223 @@
+.list-input {
+    padding-top: 20px;
+}
+
+//-----------------------------setting box style
+.setting {
+    max-width: 370px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 15px;
+    color: #2f4e74;
+    line-height: 1.3;
+    background-color: #fff;
+
+    b {
+        font-weight: 500;
+    }
+
+    .setting-item {
+        padding: 15px 15px 13px;
+        border-radius: 10px;
+        background-color: #f9fcfd;
+        margin-bottom: 15px;
+        font-size: 14px;
+
+        .setting-title {
+            padding-left: 0;
+            display: flex;
+            justify-content: space-between;
+            justify-items: center;
+
+            .title {
+                color: #2f4e74;
+                font-weight: 500;
+                margin-bottom: 0;
+            }
+
+            .form-check-input:checked {
+                background-color: #34a376;
+                border-color: #34a376;
+            }
+        }
+
+        .setting-detail {
+            padding-bottom: 15px;
+            display: none;
+        }
+
+        .form-range::-webkit-slider-thumb {
+            background: #2f4e74;
+        }
+
+        .form-range::-moz-range-thumb {
+            background: #2f4e74;
+        }
+
+        .form-range::-ms-thumb {
+            background: #2f4e74;
+        }
+
+        .radius {
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .toggle-btn {
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            content: "";
+            cursor: pointer;
+            vertical-align: middle;
+            margin-right: 5px;
+            margin-bottom: 2px;
+
+            &.open {
+                transform: rotate(90deg);
+            }
+
+            &::before,
+            &::after {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                content: "";
+                margin-top: auto;
+                margin-bottom: auto;
+
+            }
+
+            &::before {
+                left: 5px;
+                width: 8px;
+                height: 8px;
+                border-top: 2px solid #fff;
+                border-right: 2px solid #fff;
+                border-radius: 2px;
+                z-index: 100;
+                transform: rotate(45deg)
+            }
+
+            &::after {
+                left: 0;
+                width: 20px;
+                height: 20px;
+                background-color: #2f4e74;
+                border-radius: 50%;
+            }
+        }
+
+        .select-inline {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+
+            p {
+                margin-bottom: 0;
+                font-weight: 500;
+                flex: 1 auto
+            }
+
+            .form-check {
+                margin-bottom: 0;
+                margin-left: 20px;
+            }
+
+            .form-check-input[type=radio] {
+                border-radius: 50%;
+                border: 1px solid #2f4e74;
+            }
+
+            label {
+                padding-top: 1px;
+            }
+
+        }
+    }
+
+    .hotkey {
+        font-weight: 500;
+        background-color: #eaf1f7;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    .text-bold {
+        font-weight: 500;
+        color: #2f4e74;
+        margin-bottom: 10px;
+    }
+
+    .guideline {
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+    .nav {
+        justify-content: space-between;
+
+        .nav-item {
+            .nav-link {
+                padding: 4px 8px !important;
+                line-height: 1;
+                border: 1px solid #2f4e74;
+                margin-right: 4px;
+                color: #000;
+                font-weight: 500;
+
+                &.active {
+                    color: #fff;
+                    background-color: #437bf1;
+                }
+            }
+
+            &:last-child {
+                .nav-link {
+                    margin-right: 0;
+                }
+            }
+        }
+
+    }
+}
+
+//------------------------------mouse click style
+.ripple {
+    width: 1px;
+    height: 1px;
+    background-color: transparent;
+    position: fixed;
+    border-radius: 50%;
+    border: 1px solid red;
+    outline: 1px solid pink;
+}
+
+.outline {
+    z-index: 10000000;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    position: fixed;
+    border-radius: 50%;
+    background-color: yellow;
+}
+
+.solid {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    position: fixed;
+    border-radius: 50%;
+    border: 2px solid red;
+}
