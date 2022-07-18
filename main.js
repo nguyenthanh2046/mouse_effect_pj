@@ -14,16 +14,41 @@ $(document).ready(function () {
         }
     })
 
-
     //pointer Effect
+    const outlineElement = $('#outline');
+
     $(document).on('click', (e) => {
+        var mouseEffect = $('input[name="mouse_effect"]:checked').val();
         var isPointerEffect = $('#pointer_effect').prop('checked');
-        if (isPointerEffect) {
+        if (isPointerEffect && mouseEffect != "outline") {
             handlePointerEffect(e)
         }
     })
 
-    function handlePointerEffect(e, radiusMouseEffect, mouseEffect) {
+    $(document).on('mousemove', (e) => {
+        var isPointerEffect = $('#pointer_effect').prop('checked');
+        var mouseEffect = $('input[name="mouse_effect"]:checked').val();
+        var radiusMouseEffect = $('#radius-mouse-effect').val();
+        if (isPointerEffect && mouseEffect === "outline") {
+            outlineElement.css({
+                "width": `${radiusMouseEffect}px`,
+                "height": `${radiusMouseEffect}px`,
+                "left": `${e.clientX - radiusMouseEffect / 2}px`,
+                "top": `${e.clientY - radiusMouseEffect / 2}px`,
+                "display": "inline-block",
+            });
+        }
+    })
+
+    $('input[name="mouse_effect"]').on('change', function (e) {
+        if ($(this).val() != 'outline') {
+            outlineElement.css({
+                "display": "none",
+            });
+        }
+    })
+
+    function handlePointerEffect(e) {
         var radiusMouseEffect = $('#radius-mouse-effect').val();
         var mouseEffect = $('input[name="mouse_effect"]:checked').val();
         const pointerEffect = document.createElement("div");
