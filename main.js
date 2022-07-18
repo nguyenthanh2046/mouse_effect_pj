@@ -29,7 +29,7 @@ $(document).ready(function () {
         var isPointerEffect = $('#pointer_effect').prop('checked');
         var mouseEffect = $('input[name="mouse_effect"]:checked').val();
         var radiusMouseEffect = $('#radius-mouse-effect').val();
-        if (isPointerEffect && mouseEffect === "outline") {
+        if (isPointerEffect) {
             outlineElement.css({
                 "width": `${radiusMouseEffect}px`,
                 "height": `${radiusMouseEffect}px`,
@@ -40,8 +40,8 @@ $(document).ready(function () {
         }
     })
 
-    $('input[name="mouse_effect"]').on('change', function (e) {
-        if ($(this).val() != 'outline') {
+    $('#pointer_effect').on('change', function (e) {
+        if (!$(this).prop('checked')) {
             outlineElement.css({
                 "display": "none",
             });
