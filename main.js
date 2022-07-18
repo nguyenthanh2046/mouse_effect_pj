@@ -69,12 +69,6 @@ $(document).ready(function () {
         setTimeout(() => document.body.removeChild(pointerEffect), 400)
     }
 
-    // stopPropagation when click component:
-    // const all = document.body.getElementsByTagName("*");
-    // for (var i = 0;  i < all.length; ++i) {
-    //   all[i].onclick = (event) => event.stopPropagation();
-    // }
-
     // text preset setting
     var localStoragePresetTexts = localStorage.getItem('presetTexts');
     var presetTexts = localStoragePresetTexts ? JSON.parse(localStoragePresetTexts) : {};
