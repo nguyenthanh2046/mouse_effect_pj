@@ -161,18 +161,8 @@
   background-color: transparent;
   position: fixed;
   border-radius: 50%;
-  border: 1px solid red;
-  outline: 1px solid pink;
-}
-
-.outline {
-  z-index: 10000000;
-  width: 30px;
-  height: 30px;
-  background-color: transparent;
-  position: fixed;
-  border-radius: 50%;
-  background-color: yellow;
+  border: 1px solid #000;
+  outline: 1px solid #ccc;
 }
 
 .solid {
@@ -181,5 +171,14 @@
   background-color: transparent;
   position: fixed;
   border-radius: 50%;
-  border: 2px solid red;
+  background-color: yellow;
+}
+
+.outline {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  position: fixed;
+  border-radius: 50%;
+  border: 2px solid #000;
 }/*# sourceMappingURL=style.css.map */
