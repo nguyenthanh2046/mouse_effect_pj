@@ -25,16 +25,43 @@ $(document).ready(function () {
         }
     })
 
+
+    //get mouse position 
+    var mousePositionX = 0;
+    var mousePositionY = 0;
+    var lastScrolledLeft = 0;
+    var lastScrolledTop = 0;
+    $(window).scroll(function () {
+        var mousePositionX = 0;
+        if (lastScrolledLeft != $(document).scrollLeft()) {
+            mousePositionX -= lastScrolledLeft;
+            lastScrolledLeft = $(document).scrollLeft();
+            mousePositionX += lastScrolledLeft;
+        }
+        if (lastScrolledTop != $(document).scrollTop()) {
+            mousePositionY -= lastScrolledTop;
+            lastScrolledTop = $(document).scrollTop();
+            mousePositionY += lastScrolledTop;
+        }
+        window.status = "x = " + mousePositionX + " y = " + mousePositionY;
+    });
+
+    function getMousePosition(e) {
+        mousePositionX = e.pageX;
+        mousePositionY = e.pageY;
+        window.status = "x = " + mousePositionX + " y = " + mousePositionY;
+    }
+
     $(document).on('mousemove', (e) => {
+        getMousePosition(e);
         var isPointerEffect = $('#pointer_effect').prop('checked');
-        var mouseEffect = $('input[name="mouse_effect"]:checked').val();
         var radiusMouseEffect = $('#radius-mouse-effect').val();
         if (isPointerEffect) {
             outlineElement.css({
                 "width": `${radiusMouseEffect}px`,
                 "height": `${radiusMouseEffect}px`,
-                "left": `${e.clientX - radiusMouseEffect / 2}px`,
-                "top": `${e.clientY - radiusMouseEffect / 2}px`,
+                "left": `${mousePositionX - radiusMouseEffect / 2}px`,
+                "top": `${mousePositionY - radiusMouseEffect / 2}px`,
                 "display": "inline-block",
             });
         }
